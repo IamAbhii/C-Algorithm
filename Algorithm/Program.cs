@@ -10,8 +10,7 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            sf(4, 0);
-            //Console.WriteLine(sf(4,0));
+            Console.WriteLine(CreatePhoneNumber(new int[] { 0, 2, 3, 4, 5, 6, 7, 8, 9, 0 }));
             Console.ReadLine();
         }
 
@@ -41,7 +40,7 @@ namespace Algorithm
 
         #endregion
 
-        #region
+        #region calcFunc
         ////        Write a function called calculate that takes 3 values.The first and third values are numbers.
         //        The second value is a character.If the character is "+" , "-", "*", or "/", 
         //        the function will return the result of the corresponding mathematical function on the two numbers.
@@ -75,5 +74,27 @@ namespace Algorithm
         }
 
         #endregion
+        #region phonenumber
+        // Write a function that accepts an array of 10 integers(between 0 and 9),
+        //that returns a string of those numbers in the form of a phone number.
+        //Example:
+        //Kata.CreatePhoneNumber(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}) // => returns "(123) 456-7890"
+        //The returned format must be correct in order to complete this challenge.
+        //Don't forget the space after the closing parentheses!
+
+        public static string CreatePhoneNumber(int[] numbers)
+        {
+
+            string result = string.Join(string.Empty, numbers);
+            string phoneNum;
+            string phoneFormat = "(000) 000-0000";
+            phoneNum = long.Parse(result).ToString(phoneFormat);
+
+            return phoneNum;
+        }
+
+        #endregion
     }
+
+
 }
